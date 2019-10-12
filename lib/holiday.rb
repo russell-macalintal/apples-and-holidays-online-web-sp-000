@@ -66,7 +66,7 @@ def all_supplies_in_holidays(holiday_hash)
         word.capitalize!
       end
       hol_string_cap = hol_string_array.join(" ")
-      # binding.pry
+      binding.pry
       # puts "  #{hol_string_cap}"
     end
   end
