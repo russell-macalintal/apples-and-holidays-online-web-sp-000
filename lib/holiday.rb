@@ -66,8 +66,7 @@ def all_supplies_in_holidays(holiday_hash)
         word.capitalize!
       end
       hol_string_cap = hol_string_array.join(" ")
-      binding.pry
-      # puts "  #{hol_string_cap}"
+      puts "  #{hol_string_cap}: #{supply_array.join(", ")}"
     end
   end
 end
@@ -75,5 +74,13 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-
+  bbq_holiday = []
+  holiday_hash.each do |season, holiday_detail_hash|
+    holiday_detail_hash.each do |holiday, supply_array|
+      if supply_array.include?("BBQ")
+        bbq_holiday << holiday
+      end
+    end
+  end
+  bbq_holiday
 end
